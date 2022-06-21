@@ -1,0 +1,12 @@
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll

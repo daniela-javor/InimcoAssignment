@@ -2,7 +2,7 @@
 
 namespace ServiceLayer
 {
-    internal interface IPersonService
+    public interface IPersonService
     {
         Task CreatePerson(Person person);
     }

@@ -3,7 +3,7 @@ using RepositoryLayer;
 
 namespace ServiceLayer
 {
-    internal class PersonService : IPersonService
+    public class PersonService : IPersonService
     {
         private readonly IGenericRepository<Person> _repo;
 
