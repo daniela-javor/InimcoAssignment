@@ -1,4 +1,4 @@
-﻿using FileContextCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAccessLayer
@@ -7,7 +7,6 @@ namespace DataAccessLayer
     {
         public static void AddDataAccessLayerDI(this IServiceCollection services)
         {
-            services.AddDbContext<DatabaseContext>(options => options.UseFileContextDatabase());
         }
     }
 }

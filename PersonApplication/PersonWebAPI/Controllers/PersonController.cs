@@ -30,7 +30,8 @@ namespace PersonWebAPI.Controllers
             try
             {
                 await _service.CreatePerson(person);
-                return Ok();
+                //TODO: parse to DTO
+                return Ok(person);
             }
             catch (Exception ex)
             {

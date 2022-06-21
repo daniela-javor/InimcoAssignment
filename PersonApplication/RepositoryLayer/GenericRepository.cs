@@ -5,24 +5,16 @@ namespace RepositoryLayer
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly DatabaseContext _context;
-        private readonly DbSet<T> _db;
+        private readonly IFileManager<T> _fileManager;
 
-        public GenericRepository(DatabaseContext context)
+        public GenericRepository(IFileManager<T> fileManager)
         {
-            _context = context;
-            _db = _context.Set<T>();
+            _fileManager = fileManager;
         }
 
-        public async Task Insert(T entity)
+        public async Task<T> Insert(T entity)
         {
-            await _db.AddAsync(entity);
+            return await _fileManager.AppendContent(entity);
         }
-
-        public async Task Save()
-        {
-            await _context.SaveChangesAsync();
-        }
-
     }
 }
