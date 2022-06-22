@@ -61,4 +61,4 @@ C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\PersonWebAPI\ob
 C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\PersonWebAPI\obj\Debug\net6.0\PersonWebAPI.pdb
 C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\PersonWebAPI\obj\Debug\net6.0\PersonWebAPI.genruntimeconfig.cache
 C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\PersonWebAPI\obj\Debug\net6.0\ref\PersonWebAPI.dll
-C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\PersonWebAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.InMemory.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\PersonWebAPI\bin\Debug\net6.0\Newtonsoft.Json.dll

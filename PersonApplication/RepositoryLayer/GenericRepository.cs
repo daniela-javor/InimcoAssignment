@@ -14,7 +14,7 @@ namespace RepositoryLayer
 
         public async Task<T> Insert(T entity)
         {
-            return await _fileManager.AppendContent(entity);
+            return await _fileManager.SavePerson(entity);
         }
     }
 }

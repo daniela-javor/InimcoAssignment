@@ -15,7 +15,6 @@ namespace ServiceLayer
         public async Task CreatePerson(Person person)
         {
             await _repo.Insert(person);
-            await _repo.Save();
         }
     }
 }

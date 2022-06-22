@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DataAccessLayer.Data;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace DataAccessLayer
@@ -7,6 +7,7 @@ namespace DataAccessLayer
     {
         public static void AddDataAccessLayerDI(this IServiceCollection services)
         {
+            services.AddSingleton<IFileManager<Person>, FileManager<Person>>();
         }
     }
 }
