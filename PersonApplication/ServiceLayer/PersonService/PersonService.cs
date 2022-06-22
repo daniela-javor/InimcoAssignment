@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Data;
 using RepositoryLayer;
+using ServiceLayer.DTOs;
 
 namespace ServiceLayer
 {
@@ -12,9 +13,10 @@ namespace ServiceLayer
             _repo = repo;
         }
 
-        public async Task CreatePerson(Person person)
+        public async Task<PersonResultDTO> CreatePerson(Person person)
         {
             await _repo.Insert(person);
+            return new PersonResultDTO(person);
         }
     }
 }

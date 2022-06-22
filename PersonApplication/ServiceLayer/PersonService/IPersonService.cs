@@ -1,9 +1,10 @@
 ﻿using DataAccessLayer.Data;
+using ServiceLayer.DTOs;
 
 namespace ServiceLayer
 {
     public interface IPersonService
     {
-        Task CreatePerson(Person person);
+        Task<PersonResultDTO> CreatePerson(Person person);
     }
 }

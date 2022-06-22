@@ -17,7 +17,6 @@ namespace PersonWebAPI.Controllers
             _logger = logger;
         }
 
-
         [HttpPost(Name = "CreatePerson")]
         public async Task<IActionResult> CreatePerson(Person person)
         {
@@ -29,9 +28,8 @@ namespace PersonWebAPI.Controllers
 
             try
             {
-                await _service.CreatePerson(person);
-                //TODO: parse to DTO
-                return Ok(person);
+                var savedPerson = await _service.CreatePerson(person);
+                return Ok(savedPerson);
             }
             catch (Exception ex)
             {

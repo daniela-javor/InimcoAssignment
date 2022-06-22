@@ -1,9 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
@@ -11,13 +6,7 @@ namespace DataAccessLayer
     {
         public async Task<T> SavePerson(T entity)
         {
-            var list = JsonConvert.DeserializeObject<List<T>>(LoadContent());
-            if (list == null)
-                list = new List<T>();
-            list.Add(entity);
-            SaveContent(JsonConvert.SerializeObject(list, Formatting.Indented));
-
-            return entity;
+            return await SaveContent(entity);
         }
 
         private string GetFilePath()
@@ -43,11 +32,17 @@ namespace DataAccessLayer
             return ""; 
         }
 
-        private void SaveContent(string content)
+        private async Task<T> SaveContent(T entity)
         {
             //TODO: lock
+            var list = await Task.Run(() => JsonConvert.DeserializeObject<List<T>>(LoadContent())) ?? new List<T>();
+            list.Add(entity);
+            string content = await Task.Run(() => JsonConvert.SerializeObject(list, Formatting.Indented));
+
             string path = GetFilePath();
-            File.WriteAllText(path, content);
+            await File.WriteAllTextAsync(path, content);
+
+            return entity;
         }
     }
 }
