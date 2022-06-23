@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer.Data;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer;
+using ServiceLayer.DTOs;
 
 namespace WebAPI.Controllers
 {
@@ -41,7 +42,7 @@ namespace WebAPI.Controllers
 
             try
             {
-                var savedPerson = await _service.CreatePerson(person);
+                PersonResultDTO savedPerson = await _service.CreatePerson(person);
                 return Ok(savedPerson);
             }
             catch (Exception ex)

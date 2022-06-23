@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer.Data;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO.Abstractions;
 
 namespace DataAccessLayer
 {
@@ -15,8 +16,9 @@ namespace DataAccessLayer
         /// <param name="filePath">File path used for storing data.</param>
         public static void AddDataAccessLayerDI(this IServiceCollection services, string filePath)
         {
+            FileSystem fileSystem = new FileSystem();
             services.AddSingleton<IFileManager<Person>>(x =>
-                ActivatorUtilities.CreateInstance<JsonFileManager<Person>>(x, filePath));
+                ActivatorUtilities.CreateInstance<JsonFileManager<Person>>(x, fileSystem, filePath));
         }
     }
 }

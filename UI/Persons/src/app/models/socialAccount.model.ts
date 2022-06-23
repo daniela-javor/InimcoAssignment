@@ -1,4 +1,4 @@
-export interface SocialNetwork {
+export interface SocialAccount {
     type:string;
     address:string;
 }

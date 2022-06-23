@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { PersonsService } from './service/persons.service';
 import { Person } from './models/person.model';
+import { SocialAccount } from './models/socialAccount.model';
+import { PersonResponse } from './models/personResponse.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -13,31 +16,55 @@ export class AppComponent {
     firstName : '',
     lastName : '',
     socialSkills : [],
-    socialNetworks : []
+    socialAccounts : []
   }
 
-  constructor (private personsService: PersonsService){
+  personResponseJson: string = '';
+  showResponseData: boolean = false;
+  showPersonForm: boolean = true;
+  newSocialSkill: string = '';
+
+  newSocialAccount: SocialAccount = {
+    type: '',
+    address: ''
+  }
+
+  personResponse: PersonResponse = {
+    numberOfVowels : 0,
+    numberOfConsonants : 0,
+    reversedName : '',
+    person: this.person
+  }
+  constructor (private personsService: PersonsService, private router: Router){
   }
 
   onSubmit(){
     this.personsService.savePerson(this.person)
     .subscribe(
       response => {
-        console.log(response);
+        this.personResponse = response;
+        this.showPersonForm = false;
+        this.showResponseData = true;
+        this.personResponseJson = JSON.stringify(response.person, undefined, 4);
         this.person = {
           firstName : '',
           lastName : '',
           socialSkills : [],
-          socialNetworks : []
+          socialAccounts : []
         }
       }
     )
   }
   addSocialSkill(){
-    console.log('addSocialSkill');
+    this.person.socialSkills.push(this.newSocialSkill);
+    this.newSocialSkill = '';
   }
 
-  removeSocialSkill(){
-    console.log('removeSocialSkill');
+  addSocialAccount(){
+    this.person.socialAccounts.push(this.newSocialAccount);
+    this.newSocialAccount = {
+      type: '',
+      address: ''
+    }
   }
 }

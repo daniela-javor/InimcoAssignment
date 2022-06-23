@@ -76,7 +76,7 @@ form a {
     border-radius: 2px;
 }
 
-.socialNetworksRow {
+.socialAccountsRow {
     width: 100%;
     display: flex;
     flex-grow: 1;
@@ -88,12 +88,17 @@ form a {
     border-radius: 2px;
 }
 
-.socialNetworkType {
+.socialAccountType {
     width: 30%;
     margin-right: 0.2em;
 }
 
-.socialNetworkAddress {
+.socialAccountAddress {
     width: 70%;
     margin-right: 0.2em;
+}
+
+.personResponse
+{
+    padding-top: 1em;
 }

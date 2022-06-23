@@ -1,8 +1,8 @@
-import { SocialNetwork } from './socialNetwork.model';
+import { SocialAccount } from './socialAccount.model';
 
 export interface Person {
     firstName:string;
     lastName:string;
     socialSkills:string[];
-    socialNetworks:SocialNetwork[];
+    socialAccounts:SocialAccount[];
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Person Data</h1>
 
-  <div class="person-data-container">
+  <div *ngIf="showPersonForm" class="person-data-container">
     <div class="person-data-form">
       <form #form ="ngForm" (ngSubmit) = "onSubmit()">
         <div class="form-group">
@@ -15,49 +15,36 @@
         <div class="form-group">
           <label for="socialSkill">Social Skills:</label>
           <div class="form-group-inline">
-            <input type="text" name="socialSkill" id="socialSkill" placeholder="add social skill">
-            <a (click)="addSocialSkill"><i class="fa-solid fa-plus"></i></a>
+            <input type="text" name="socialSkill" id="socialSkill" placeholder="add social skill" [(ngModel)]="newSocialSkill">
+            <a (click)="addSocialSkill()"><i class="fa-solid fa-plus"></i></a>
           </div>
           <div class="socialSkillsGrid">
-            <div class="socialSkillsTag">
-              <span>Friendly</span>
-              <a (click)="removeSocialSkill"><i class="fa-solid fa-xmark"></i></a>
-            </div>
-            <div class="socialSkillsTag">
-              <span>Friendly</span>
-              <a><i class="fa-solid fa-xmark"></i></a>
+            <div class="socialSkillsTag" *ngFor="let skill of person.socialSkills; let i = index" >
+              <span>{{skill}}</span>
+              <a (click)="person.socialSkills.splice(i, 1)"><i class="fa-solid fa-xmark"></i></a>
             </div>
           </div>
         </div>
         <div class="form-group">
-          <label for="socialNetwork">Social Networks:</label>
+          <label for="socialAccount">Social Accounts:</label>
           <div class="form-group-inline">
-            <div class="socialNetworkType">
-              <input type="text" name="socialNetworkType" id="socialNetworkType" placeholder="type">
+            <div class="socialAccountType">
+              <input type="text" name="socialAccountType" id="socialAccountType" placeholder="type" [(ngModel)]="newSocialAccount.type">
             </div>
-            <div class="socialNetworkAddress">
-              <input type="text" name="socialNetworkAddress" id="socialNetworkAddress" placeholder="address">
+            <div class="socialAccountAddress">
+              <input type="text" name="socialAccountAddress" id="socialAccountAddress" placeholder="address" [(ngModel)]="newSocialAccount.address">
             </div>
-            <a><i class="fa-solid fa-plus"></i></a>
+            <a (click)="addSocialAccount()"><i class="fa-solid fa-plus"></i></a>
           </div>
-          <div class="socialNetworksGrid">
-            <div class="socialNetworksRow">
-              <div class="socialNetworkType">
-                <span>Instagram</span>
+          <div class="socialAccountsGrid">
+            <div class="socialAccountsRow" *ngFor="let account of person.socialAccounts; let i = index">
+              <div class="socialAccountType">
+                <span>{{account.type}}</span>
               </div>
-              <div class="socialNetworkAddress">
-                <span>@jjj</span>
+              <div class="socialAccountAddress">
+                <span>{{account.address}}</span>
               </div>
-              <a><i class="fa-solid fa-xmark"></i></a>
-            </div>
-            <div class="socialNetworksRow">
-              <div class="socialNetworkType">
-                <span>Instagram</span>
-              </div>
-              <div class="socialNetworkAddress">
-                <span>@jjj</span>
-              </div>
-              <a><i class="fa-solid fa-xmark"></i></a>
+              <a (click)="person.socialAccounts.splice(i, 1)"><i class="fa-solid fa-xmark"></i></a>
             </div>
           </div>
         </div>
@@ -66,5 +53,13 @@
         </div>
       </form>
     </div>
+  </div>
+  <div *ngIf="showResponseData" class="personResponse" [(ngModel)]="personResponse">
+    <div>The number of VOWELS: {{personResponse.numberOfVowels}}</div>
+    <div>The number of CONSONANTS: {{personResponse.numberOfConsonants}}</div>
+    <div>The firstname + last name entered: {{personResponse.person.firstName}} {{personResponse.person.lastName}}</div>
+    <div>The reverse version of the firstname and lastname: {{personResponse.reversedName}}</div>
+    <div>The JSON formatof the entire object:</div>
+    <div [(ngModel)]="personResponseJson">{{personResponseJson}}</div>
   </div>
 </div>
