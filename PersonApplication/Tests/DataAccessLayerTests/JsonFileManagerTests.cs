@@ -1,8 +1,8 @@
 using Xunit;
 
-namespace ServiceLayerTests
+namespace DataAccessLayerTests
 {
-    public class NameAnalyzerTests
+    public class JsonFileManagerTests
     {
         [Fact]
         public void Test1()

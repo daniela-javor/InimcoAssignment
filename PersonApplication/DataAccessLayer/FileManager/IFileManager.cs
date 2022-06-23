@@ -8,6 +8,6 @@ namespace DataAccessLayer
 {
     public interface IFileManager<T> where T : class
     {
-        Task<T> SavePerson(T entity);
+        Task<T> SaveEntity(T entity);
     }
 }

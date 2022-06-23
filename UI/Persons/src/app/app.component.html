@@ -6,22 +6,22 @@
       <form #form ="ngForm" (ngSubmit) = "onSubmit()">
         <div class="form-group">
           <label for="firstName">First Name:</label>
-          <input type="text" name="firstName" id="firstName" [(ngModel)]="person.firstName">
+          <input type="text" name="firstName" id="firstName" placeholder="first name" [(ngModel)]="person.firstName">
         </div>
         <div class="form-group">
           <label for="lastName">Last Name:</label>
-          <input type="text" name="lastName" id="lastName" [(ngModel)]="person.lastName">
+          <input type="text" name="lastName" id="lastName" placeholder="last name" [(ngModel)]="person.lastName">
         </div>
         <div class="form-group">
           <label for="socialSkill">Social Skills:</label>
           <div class="form-group-inline">
-            <input type="text" name="socialSkill" id="socialSkill">
-            <a><i class="fa-solid fa-plus"></i></a>
+            <input type="text" name="socialSkill" id="socialSkill" placeholder="add social skill">
+            <a (click)="addSocialSkill"><i class="fa-solid fa-plus"></i></a>
           </div>
           <div class="socialSkillsGrid">
             <div class="socialSkillsTag">
               <span>Friendly</span>
-              <a><i class="fa-solid fa-xmark"></i></a>
+              <a (click)="removeSocialSkill"><i class="fa-solid fa-xmark"></i></a>
             </div>
             <div class="socialSkillsTag">
               <span>Friendly</span>
@@ -33,10 +33,10 @@
           <label for="socialNetwork">Social Networks:</label>
           <div class="form-group-inline">
             <div class="socialNetworkType">
-              <input type="text" name="socialNetworkType" id="socialNetworkType">
+              <input type="text" name="socialNetworkType" id="socialNetworkType" placeholder="type">
             </div>
             <div class="socialNetworkAddress">
-              <input type="text" name="socialNetworkAddress" id="socialNetworkAddress">
+              <input type="text" name="socialNetworkAddress" id="socialNetworkAddress" placeholder="address">
             </div>
             <a><i class="fa-solid fa-plus"></i></a>
           </div>

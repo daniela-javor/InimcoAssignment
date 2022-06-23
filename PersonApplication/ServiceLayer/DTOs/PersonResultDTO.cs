@@ -13,9 +13,9 @@ namespace ServiceLayer.DTOs
         public PersonResultDTO(Person person)
         {
             string fullName = string.Join(" ", person.FirstName, person.LastName);
-            NumberOfVowels = NameAnalyzer.GetNumberOfVowels(fullName);
-            NumberOfConsonants = NameAnalyzer.GetNumberOfConsonants(fullName);
-            ReversedName = NameAnalyzer.GetReversedName(fullName);
+            NumberOfVowels = StringAnalyzer.GetNumberOfVowels(fullName);
+            NumberOfConsonants = StringAnalyzer.GetNumberOfConsonants(fullName);
+            ReversedName = StringAnalyzer.GetReversedName(fullName);
             SavedPerson = person;
         }
     }

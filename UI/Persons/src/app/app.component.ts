@@ -20,7 +20,6 @@ export class AppComponent {
   }
 
   onSubmit(){
-    console.log(this.person);
     this.personsService.savePerson(this.person)
     .subscribe(
       response => {
@@ -33,5 +32,12 @@ export class AppComponent {
         }
       }
     )
+  }
+  addSocialSkill(){
+    console.log('addSocialSkill');
+  }
+
+  removeSocialSkill(){
+    console.log('removeSocialSkill');
   }
 }
