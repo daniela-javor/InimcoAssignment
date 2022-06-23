@@ -2,35 +2,54 @@
 
 namespace ServiceLayer.ServiceHelpers
 {
+    /// <summary>
+    /// StringAnalyzer class used for analyzing string content.
+    /// </summary>
     public static class StringAnalyzer
     {
         private static readonly string vowelsRegex = @"[aeiou]";
         private static readonly string consonantsRegex = @"[a-z-[aeiou]]";
 
-        public static int GetNumberOfVowels(string name)
+        /// <summary>
+        /// Gets number of vowels in the string.
+        /// </summary>
+        /// <param name="input">Input string.</param>
+        /// <returns></returns>
+        public static int GetNumberOfVowels(string input)
         {
-            if (name == null)
+            if (input == null)
             {
                 return 0;
             }
-            return new Regex(vowelsRegex, RegexOptions.IgnoreCase).Matches(name).Count;
-        }
-        public static int GetNumberOfConsonants(string name)
-        {
-            if (name == null)
-            {
-                return 0;
-            }
-            return new Regex(consonantsRegex, RegexOptions.IgnoreCase).Matches(name).Count;
+            return new Regex(vowelsRegex, RegexOptions.IgnoreCase).Matches(input).Count;
         }
 
-        public static string GetReversedName(string name)
+        /// <summary>
+        /// Gets number of consonants in the string.
+        /// </summary>
+        /// <param name="input">Input string.</param>
+        /// <returns></returns>
+        public static int GetNumberOfConsonants(string input)
         {
-            if (name == null)
+            if (input == null)
+            {
+                return 0;
+            }
+            return new Regex(consonantsRegex, RegexOptions.IgnoreCase).Matches(input).Count;
+        }
+
+        /// <summary>
+        /// Gets reversed string.
+        /// </summary>
+        /// <param name="input">Input string.</param>
+        /// <returns></returns>
+        public static string GetReversedString(string input)
+        {
+            if (input == null)
             {
                 return "";
             }
-            char[] stringArray = name.ToCharArray();
+            char[] stringArray = input.ToCharArray();
             Array.Reverse(stringArray);
             return new string(stringArray);
         }

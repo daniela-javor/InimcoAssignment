@@ -61,7 +61,7 @@ namespace ServiceLayerTests
         [InlineData("", "")]
         public void GetReversedNameTest(string input, string expectedReversedString)
         {
-            string reversedString = StringAnalyzer.GetReversedName(input);
+            string reversedString = StringAnalyzer.GetReversedString(input);
             Assert.Equal(expectedReversedString, reversedString);
         }
     }
