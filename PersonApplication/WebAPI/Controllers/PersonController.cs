@@ -4,6 +4,9 @@ using ServiceLayer;
 
 namespace WebAPI.Controllers
 {
+    /// <summary>
+    /// Person controller class.
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class PersonController : Controller
@@ -11,12 +14,22 @@ namespace WebAPI.Controllers
         private readonly ILogger<PersonController> _logger;
         private readonly IPersonService _service;
 
+        /// <summary>
+        /// Person controller constructor.
+        /// </summary>
+        /// <param name="service">IPersonService interface instance.</param>
+        /// <param name="logger">ILogger instance.</param>
         public PersonController(IPersonService service, ILogger<PersonController> logger)
         {
             _service = service;
             _logger = logger;
         }
 
+        /// <summary>
+        /// CreatePerson POST method.
+        /// </summary>
+        /// <param name="person">Person to create.</param>
+        /// <returns>Returns IActionResult as async task.</returns>
         [HttpPost(Name = "CreatePerson")]
         public async Task<IActionResult> CreatePerson(Person person)
         {

@@ -5,6 +5,7 @@ using ServiceLayer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Add DI objects for all layers.
 builder.Services.AddDataAccessLayerDI(builder.Configuration["JsonFilePath"]);
 builder.Services.AddRepositoryLayerDI();
 builder.Services.AddServiceLayerDI();
