@@ -15,7 +15,7 @@ namespace ServiceLayer
 
         public async Task<PersonResultDTO> CreatePerson(Person person)
         {
-            await _repo.Insert(person);
+            await _repo.CreateEntity(person);
             return new PersonResultDTO(person);
         }
     }
