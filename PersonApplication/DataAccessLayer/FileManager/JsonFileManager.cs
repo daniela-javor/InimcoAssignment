@@ -3,12 +3,21 @@ using System.IO.Abstractions;
 
 namespace DataAccessLayer
 {
+    /// <summary>
+    /// Represents class used for saving entities to json file on file system.
+    /// </summary>
+    /// <typeparam name="T">Entity type.</typeparam>
     public class JsonFileManager<T> : IFileManager<T> where T : class
     {
         private readonly IFileSystem _fileSystem;
         private string _path;
         private SemaphoreSlim _lockObject;
 
+        /// <summary>
+        /// JsonFileManager constructor.
+        /// </summary>
+        /// <param name="fileSystem">File system interface.</param>
+        /// <param name="path">Full path to json file on file system.</param>
         public JsonFileManager(IFileSystem fileSystem, string path)
         {
             _fileSystem = fileSystem;
@@ -16,6 +25,11 @@ namespace DataAccessLayer
             _lockObject = new SemaphoreSlim(1);
         }
 
+        /// <summary>
+        /// Saves entity to json file.
+        /// </summary>
+        /// <param name="entity">Entity to save.</param>
+        /// <returns>Returns saved entity.</returns>
         public async Task<T> SaveEntity(T entity)
         {
             await _lockObject.WaitAsync();
@@ -36,6 +50,10 @@ namespace DataAccessLayer
             return entity;
         }
 
+        /// <summary>
+        /// Loads content from file.
+        /// </summary>
+        /// <returns>Returns loaded file as string.</returns>
         private string LoadContent()
         {
             string content = "";
@@ -48,6 +66,11 @@ namespace DataAccessLayer
             return content;
         }
 
+        /// <summary>
+        /// Saves entity to json file.
+        /// </summary>
+        /// <param name="entity">Entity to save.</param>
+        /// <returns>Async task.</returns>
         private async Task SaveContent(T entity)
         {
             _fileSystem.Directory.CreateDirectory(new DirectoryInfo(_path).Name);

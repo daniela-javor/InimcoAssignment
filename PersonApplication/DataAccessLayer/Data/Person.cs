@@ -2,20 +2,35 @@
 
 namespace DataAccessLayer.Data
 {
+    /// <summary>
+    /// Represents Person data entity class.
+    /// </summary>
     public class Person
     {
+        /// <summary>
+        /// First name of a person.
+        /// </summary>
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         [RegularExpression("^[a-zA-Z ]*$")]
-        public string? FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Last name of a person.
+        /// </summary>
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         [RegularExpression("^[a-zA-Z ]*$")]
-        public string? LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
 
-        public List<string>? SocialSkills { get; set; }
+        /// <summary>
+        /// Social skills of a person.
+        /// </summary>
+        public List<string> SocialSkills { get; set; } = new List<string>();
 
-        public List<SocialAccount>? SocialAccounts { get; set; }
+        /// <summary>
+        /// Social accounts of a person.
+        /// </summary>
+        public List<SocialAccount> SocialAccounts { get; set; } = new List<SocialAccount>();
     }
 }
