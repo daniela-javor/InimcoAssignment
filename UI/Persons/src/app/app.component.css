@@ -1,0 +1,99 @@
+.container {
+    padding: 3em;
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.person-data-container {
+    display: flex;
+    width: 100%;
+    padding-top: 1em;
+}
+
+.person-data-form {
+    padding: 1em;
+}
+
+form .form-group {
+    margin-bottom: 1em;
+}
+
+form label {
+    display: block;
+    margin: 0.5em;
+    font-weight: bold;
+}
+
+form input {
+    width: 100%;
+    padding: 0.5em 0.3em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+}
+
+form button {
+    padding: 0.5em 0.3em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
+    background-color:gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    border-style: none;
+}
+
+form .form-group-inline {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+form .form-group-inline input {
+    margin-right: 0.2em
+}
+
+form .form-group-inline i {
+    padding: 0.5em 0.3em;
+}
+
+form a {
+    margin:0.2em;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.socialSkillsTag {
+    display: inline;
+    padding: 0.2em;
+    margin-right: 0.2em;
+    background-color:lightskyblue;
+    color: white;
+    border-radius: 2px;
+}
+
+.socialNetworksRow {
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 0.2em;
+    margin: 0.2em 0em;
+    background-color: lightskyblue;
+    color:white;
+    border-radius: 2px;
+}
+
+.socialNetworkType {
+    width: 30%;
+    margin-right: 0.2em;
+}
+
+.socialNetworkAddress {
+    width: 70%;
+    margin-right: 0.2em;
+}
