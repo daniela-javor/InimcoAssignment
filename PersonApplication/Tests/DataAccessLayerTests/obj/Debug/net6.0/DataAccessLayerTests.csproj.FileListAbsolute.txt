@@ -97,3 +97,9 @@ C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAcces
 C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\obj\Debug\net6.0\DataAccessLayerTests.pdb
 C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\obj\Debug\net6.0\DataAccessLayerTests.genruntimeconfig.cache
 C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\obj\Debug\net6.0\ref\DataAccessLayerTests.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\bin\Debug\net6.0\System.IO.Abstractions.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\bin\Debug\net6.0\System.IO.Abstractions.TestingHelpers.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\Daniela\source\repos\InimcoAssignment\PersonApplication\Tests\DataAccessLayerTests\bin\Debug\net6.0\DataAccessLayer.pdb

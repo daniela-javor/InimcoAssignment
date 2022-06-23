@@ -1,16 +1,19 @@
 ﻿using Newtonsoft.Json;
+using System.IO.Abstractions;
 
 namespace DataAccessLayer
 {
     public class JsonFileManager<T> : IFileManager<T> where T : class
     {
-        private SemaphoreSlim _lockObject;
+        private readonly IFileSystem _fileSystem;
         private string _path;
+        private SemaphoreSlim _lockObject;
 
-        public JsonFileManager(string path)
+        public JsonFileManager(IFileSystem fileSystem, string path)
         {
-            _lockObject = new SemaphoreSlim(1);
+            _fileSystem = fileSystem;
             _path = path;
+            _lockObject = new SemaphoreSlim(1);
         }
 
         public async Task<T> SaveEntity(T entity)
@@ -37,9 +40,9 @@ namespace DataAccessLayer
         {
             string content = "";
 
-            if (File.Exists(_path))
+            if (_fileSystem.File.Exists(_path))
             {
-                content = File.ReadAllText(_path);
+                content = _fileSystem.File.ReadAllText(_path);
             }
 
             return content;
@@ -47,12 +50,12 @@ namespace DataAccessLayer
 
         private async Task SaveContent(T entity)
         {
-            Directory.CreateDirectory(new DirectoryInfo(_path).Name);
+            _fileSystem.Directory.CreateDirectory(new DirectoryInfo(_path).Name);
             string content = LoadContent();
             var list = await Task.Run(() => JsonConvert.DeserializeObject<List<T>>(content)) ?? new List<T>();
             list.Add(entity);
             content = await Task.Run(() => JsonConvert.SerializeObject(list, Formatting.Indented));
-            await File.WriteAllTextAsync(_path, content);
+            await _fileSystem.File.WriteAllTextAsync(_path, content);
         }
     }
 }

@@ -3,8 +3,16 @@ using ServiceLayer.ServiceHelpers;
 
 namespace ServiceLayerTests
 {
+    /// <summary>
+    /// StringAnalyzer unit tests class.
+    /// </summary>
     public class StringAnalyzerTests
     {
+        /// <summary>
+        /// Tests counting number of vowels.
+        /// </summary>
+        /// <param name="input">Input string.</param>
+        /// <param name="expectedCount">Expected result.</param>
         [Theory]
         [InlineData("Jane Doe", 4)]
         [InlineData("Name MiddleName Surname", 9)]
@@ -19,6 +27,11 @@ namespace ServiceLayerTests
             Assert.Equal(expectedCount, count);
         }
 
+        /// <summary>
+        /// Tests counting number of consonants.
+        /// </summary>
+        /// <param name="input">Input string.</param>
+        /// <param name="expectedCount">Expected result.</param>
         [Theory]
         [InlineData("Jane Doe", 3)]
         [InlineData("Name MiddleName Surname", 12)]
@@ -33,6 +46,11 @@ namespace ServiceLayerTests
             Assert.Equal(expectedCount, count);
         }
 
+        /// <summary>
+        /// Tests string reversing.
+        /// </summary>
+        /// <param name="input">Input string.</param>
+        /// <param name="expectedReversedString">Expected reversed string.</param>
         [Theory]
         [InlineData("Jane Doe", "eoD enaJ")]
         [InlineData("Name MiddleName Surname", "emanruS emaNelddiM emaN")]

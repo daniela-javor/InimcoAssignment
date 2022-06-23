@@ -628,6 +628,14 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
+      "System.IO.Abstractions/17.0.18": {
+        "runtime": {
+          "lib/net6.0/System.IO.Abstractions.dll": {
+            "assemblyVersion": "17.0.0.0",
+            "fileVersion": "17.0.18.56973"
+          }
+        }
+      },
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -1144,7 +1152,8 @@
       "DataAccessLayer/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
-          "Newtonsoft.Json": "13.0.1"
+          "Newtonsoft.Json": "13.0.1",
+          "System.IO.Abstractions": "17.0.18"
         },
         "runtime": {
           "DataAccessLayer.dll": {}
@@ -1539,6 +1548,13 @@
       "sha512": "sha512-3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "path": "system.io/4.3.0",
       "hashPath": "system.io.4.3.0.nupkg.sha512"
+    },
+    "System.IO.Abstractions/17.0.18": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-x0iIMdP+PCLIkz8h13xHCecaiysFgHPe9mM3FdyfSmkl5+MtMCmgFFIe38Aibkzd0UAY/OMoXMKGR2RK10rebQ==",
+      "path": "system.io.abstractions/17.0.18",
+      "hashPath": "system.io.abstractions.17.0.18.nupkg.sha512"
     },
     "System.IO.Compression/4.3.0": {
       "type": "package",

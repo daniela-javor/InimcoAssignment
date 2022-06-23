@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "q1Us5ci2PK/BXOh7m26JdXsKLkK+pWG4QFK/2DfCmTeEMlo0lancLt/0Rd+b0Kjya/lklCNATD0X7qhcmkTMNQ==",
+  "dgSpecHash": "g0hfKE/zTKyCCNNqi7lhmy51W5Hrq9XVdmL/P2RErCC9Z0f4Vl9hAbiRZhJuf/H8UoZWqgr7wj1S5CQcY0jDtA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Daniela\\source\\repos\\InimcoAssignment\\PersonApplication\\WebAPI\\WebAPI.csproj",
   "expectedPackageFiles": [
@@ -24,6 +24,7 @@
     "C:\\Users\\Daniela\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
     "C:\\Users\\Daniela\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Daniela\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
+    "C:\\Users\\Daniela\\.nuget\\packages\\system.io.abstractions\\17.0.18\\system.io.abstractions.17.0.18.nupkg.sha512",
     "C:\\Users\\Daniela\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
